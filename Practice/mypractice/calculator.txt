@@ -1,0 +1,88 @@
+import React, { useEffect, useState } from "react";
+import { View,Text, SafeAreaView, FlatList, TouchableOpacity } from "react-native";
+import Userinputs from "./userinput";
+import Todolist from "./todolist";
+
+const listItems = [
+  {
+    name:'Virat',
+    id:1,
+    rank:2,
+    role:'batsman'
+
+  },
+  {
+    name:'Mahi',
+    id:2,
+    rank:1,
+    role:'wicketkeeper'
+
+  },
+  {
+    name:'Hardik',
+    id:3,
+    rank:4,
+    role:'Allrounder'
+
+  },
+  {
+    name:'Bhuvi',
+    id:4,
+    rank:3,
+    role:'bowler'
+
+  }
+
+
+]
+
+
+
+function Calculator() : JSX.Element{
+
+  const [flag,Setflag] = useState<boolean>();
+
+  if(flag === true){
+    listItems.sort((a, b) => b.rank - a.rank);
+    
+  }
+  else{
+    listItems.sort((a, b) => a.rank - b.rank);
+  }
+
+
+  
+ 
+  return(
+
+    <SafeAreaView>
+      <View>
+      
+        <FlatList
+          data = {listItems}
+          renderItem={({item}) => 
+          <View style={{flex:1 , flexDirection:'row'}}>
+          <Text style={{color:'red'}}>{item.id}</Text>
+          <Text>{item.name}</Text>
+          <Text>{item.rank}</Text>
+          <Text>{item.role}</Text>
+          </View>
+        }
+        />
+      </View>
+      <View>
+          <TouchableOpacity onPress={()=>Setflag(false)}>
+            <Text style={{borderWidth:1,backgroundColor:'skyblue'}}>Asc</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={()=>Setflag(true)}>
+            <Text style={{borderWidth:1,backgroundColor:'skyblue'}}>Desc</Text>
+          </TouchableOpacity>
+        </View>
+
+    </SafeAreaView>
+
+  )
+
+}
+
+export default Calculator;

@@ -1,0 +1,29 @@
+const [result,updateresult] = useState <number>(0);
+  const addfunction = (num1 : number,num2 : number) =>{
+    updateresult(num1 + num2);
+  }
+
+  const subfunction = (num1 : number,num2 : number) =>{
+   updateresult(num1 - num2);
+  }
+
+  const multifunction = (num1 : number,num2 : number) =>{
+    updateresult(num1 * num2);
+   }
+
+   const divfunction = (num1 : number,num2 : number) =>{
+    updateresult(num1 / num2);
+   }
+
+  return(
+
+    <View style ={{margin : 30}}>
+      <Text style ={{fontSize : 25, fontWeight: "bold", textAlign:"center"}}>My-Calci</Text>
+      <Userinputs addfunction={addfunction} subfunction={subfunction} multifunction={multifunction} divfunction={divfunction} ></Userinputs>
+      <Text>Result : {result}</Text>
+      <Todolist></Todolist>
+    </View>
+
+  );
+
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
