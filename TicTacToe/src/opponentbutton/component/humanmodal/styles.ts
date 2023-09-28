@@ -1,0 +1,67 @@
+import {Platform, StyleSheet} from 'react-native';
+
+export const styles = StyleSheet.create({
+  mainView: {flex: 1, justifyContent: 'center', alignItems: 'center'},
+  modalView: {
+    height: 200,
+    width: 400,
+    backgroundColor: '#003566',
+    borderColor: '#dddddd',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderRadius: 5,
+    padding: 10,
+  },
+  inputContainer: {margin: 10, flex: 4, justifyContent: 'center'},
+  inputLabelContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  inputLableText: {fontWeight: 'bold', color: 'white', fontSize: 20},
+  inputTextContainer: {
+    borderWidth: 1,
+    backgroundColor: 'white',
+    height: Platform.OS === 'ios' ? 25 : 35,
+    borderRadius: 3,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonInnerContainer: {
+    borderWidth: 4,
+    borderColor: '#001a33',
+    backgroundColor: '#001a33',
+    borderRadius: 5,
+    width: 115,
+    height: 35,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 20,
+  },
+  buttonText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  xIcon: {
+    borderRadius: 50,
+    borderWidth: 1,
+    height: 25,
+    width: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#8533ff',
+  },
+  oIcon: {
+    borderRadius: 50,
+    borderWidth: 1,
+    height: 25,
+    width: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ffa31a',
+  },
+});
